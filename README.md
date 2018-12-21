@@ -25,8 +25,6 @@ The result is use for clear the data set and descriptive variable names
 
 5. Combine the subject ID and activity to data set
 
-The combined data set would store in "binddata"
-
 6. Label the colnames and rownames with descriptive names
 
 Extract the "activity" column to new variable, replace its level with descriptive activity then put it back
