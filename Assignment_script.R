@@ -47,4 +47,4 @@ if (!"reshape2" %in% installed.packages()){
 library(reshape2)
 meltdata <- melt(binddata,id.vars = c("subject","activity"))
 averge <- dcast(meltdata,subject + activity ~variable,mean)
-write.csv(averge,"Tidy_Averge.csv",row.names = FALSE)
+write.table(averge,"Tidy_Averge.txt",row.names = FALSE)
