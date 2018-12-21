@@ -1,74 +1,169 @@
-# 1. Download and unzip file
+# Here is the variables in the "Tidy_Averge"
+	 [1] "subject": Subject IDs in training and test group                        
+	 [2] "activity": the activity IDs replaced by factor 1-6: 
+		 1            WALKING
+		 2   WALKING_UPSTAIRS
+		 3 WALKING_DOWNSTAIRS
+		 4            SITTING
+		 5           STANDING
+		 6             LAYING
 
-	"zipfile": the name for download zip file
+# The averge mean and std of each meansurement
 
-	"dirt": the unzip folder address 
+	[3] "tBodyAcc-mean()-X"              
 
-	"dataurl": the url for download
+	[4] "tBodyAcc-mean()-Y"              
 
+	[5] "tBodyAcc-mean()-Z"              
 
-# 2. Load data to R
-  
-	"features": the descriptive column names
-  
-	"activelabel": the descriptive row names
-  
-	"xtrain": the meansure data for training group
-  
-	"ytrain": the activity factor for training group
-  
-	"xtest": the meansure data for test group
-  
-	"ytest": the activity factor for test group
-  
-	"subtest" the subjects ID for test group
-  
-	"subtrain": the subjects ID for training group
-  
-  
-# 3. Combine data set
-    
-  Using rbind() to paste test data after training data
-  
-	"binddata": combined training and test data set
-  
-  
-# 4. Extract the mean and std
-  
-  Using grep() to find out which columns name contain the "mean()" or "std()"
+	[6] "tBodyAcc-std()-X"               
 
-  The result is use for clear the variables of "binddata" and "features"
-  
-	"clearfactor": columns list contains the data that we need
-	
+	[7] "tBodyAcc-std()-Y"               
 
-# 5. Combine the subject ID and activity to data set
+	[8] "tBodyAcc-std()-Z"               
 
- The combined data set would store in "binddata"
- 
-	"bindsub": paste test subject ID after the training ID
-	
-	"bindact": paste test activity factor after the training factor
-	
+	[9] "tGravityAcc-mean()-X"           
 
-# 6. Label the colnames and rownames with descriptive names
+	[10] "tGravityAcc-mean()-Y"           
 
- Extract the "activity" column to new variable, replace its level with variable "activitylabel" then put it back 
+	[11] "tGravityAcc-mean()-Z"           
 
- Replace the column name of the data set with a string: "subject", "activity", and names in features variable
- 
-	"labelin": extracted "activity" column for level replacing
-	
-	
-# 7. Create the second table
+	[12] "tGravityAcc-std()-X"            
 
- Using melt() to make all values in a singel column 
+	[13] "tGravityAcc-std()-Y"            
 
- Make a second table to calculate the averge value of each subject, each activity and each variable
+	[14] "tGravityAcc-std()-Z"            
 
- Write it out to a txt file as known as "Tidy_Averge.txt"
- 
- 	"meltdata": the data set after applied melt()
-	
-	"averge": the second table
-	
+	[15] "tBodyAccJerk-mean()-X"          
+
+	[16] "tBodyAccJerk-mean()-Y"          
+
+	[17] "tBodyAccJerk-mean()-Z"          
+
+	[18] "tBodyAccJerk-std()-X"           
+
+	[19] "tBodyAccJerk-std()-Y"           
+
+	[20] "tBodyAccJerk-std()-Z"           
+
+	[21] "tBodyGyro-mean()-X"             
+
+	[22] "tBodyGyro-mean()-Y"             
+
+	[23] "tBodyGyro-mean()-Z"             
+
+	[24] "tBodyGyro-std()-X"              
+
+	[25] "tBodyGyro-std()-Y"              
+
+	[26] "tBodyGyro-std()-Z"              
+
+	[27] "tBodyGyroJerk-mean()-X"         
+
+	[28] "tBodyGyroJerk-mean()-Y"         
+
+	[29] "tBodyGyroJerk-mean()-Z"         
+
+	[30] "tBodyGyroJerk-std()-X"          
+
+	[31] "tBodyGyroJerk-std()-Y"          
+
+	[32] "tBodyGyroJerk-std()-Z"          
+
+	[33] "tBodyAccMag-mean()"             
+
+	[34] "tBodyAccMag-std()"              
+
+	[35] "tGravityAccMag-mean()"          
+
+	[36] "tGravityAccMag-std()"           
+
+	[37] "tBodyAccJerkMag-mean()"         
+
+	[38] "tBodyAccJerkMag-std()"          
+
+	[39] "tBodyGyroMag-mean()"            
+
+	[40] "tBodyGyroMag-std()"             
+
+	[41] "tBodyGyroJerkMag-mean()"        
+
+	[42] "tBodyGyroJerkMag-std()"         
+
+	[43] "fBodyAcc-mean()-X"              
+
+	[44] "fBodyAcc-mean()-Y"              
+
+	[45] "fBodyAcc-mean()-Z"              
+
+	[46] "fBodyAcc-std()-X"               
+
+	[47] "fBodyAcc-std()-Y"               
+
+	[48] "fBodyAcc-std()-Z"               
+
+	[49] "fBodyAcc-meanFreq()-X"          
+
+	[50] "fBodyAcc-meanFreq()-Y"          
+
+	[51] "fBodyAcc-meanFreq()-Z"          
+
+	[52] "fBodyAccJerk-mean()-X"          
+
+	[53] "fBodyAccJerk-mean()-Y"          
+
+	[54] "fBodyAccJerk-mean()-Z"          
+
+	[55] "fBodyAccJerk-std()-X"           
+
+	[56] "fBodyAccJerk-std()-Y"           
+
+	[57] "fBodyAccJerk-std()-Z"           
+
+	[58] "fBodyAccJerk-meanFreq()-X"      
+
+	[59] "fBodyAccJerk-meanFreq()-Y"      
+
+	[60] "fBodyAccJerk-meanFreq()-Z"      
+
+	[61] "fBodyGyro-mean()-X"             
+
+	[62] "fBodyGyro-mean()-Y"             
+
+	[63] "fBodyGyro-mean()-Z"             
+
+	[64] "fBodyGyro-std()-X"              
+
+	[65] "fBodyGyro-std()-Y"              
+
+	[66] "fBodyGyro-std()-Z"              
+
+	[67] "fBodyGyro-meanFreq()-X"         
+
+	[68] "fBodyGyro-meanFreq()-Y"         
+
+	[69] "fBodyGyro-meanFreq()-Z"         
+
+	[70] "fBodyAccMag-mean()"             
+
+	[71] "fBodyAccMag-std()"              
+
+	[72] "fBodyAccMag-meanFreq()"         
+
+	[73] "fBodyBodyAccJerkMag-mean()"     
+
+	[74] "fBodyBodyAccJerkMag-std()"      
+
+	[75] "fBodyBodyAccJerkMag-meanFreq()" 
+
+	[76] "fBodyBodyGyroMag-mean()"        
+
+	[77] "fBodyBodyGyroMag-std()"         
+
+	[78] "fBodyBodyGyroMag-meanFreq()"    
+
+	[79] "fBodyBodyGyroJerkMag-mean()"    
+
+	[80] "fBodyBodyGyroJerkMag-std()"     
+
+	[81] "fBodyBodyGyroJerkMag-meanFreq()"
