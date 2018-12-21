@@ -66,7 +66,7 @@
  
  Make a second table to calculate the averge value of each subject, each activity and each variable
  
- Write it out to a csv table as known as "Tidy_Averge.csv"
+ Write it out to a txt file as known as "Tidy_Averge.txt"
  
  	"meltdata": the data set after applied melt()
 	
