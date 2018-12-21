@@ -28,19 +28,19 @@ binddata <- rbind(xtrain,xtest)
 
 # Extract the mean and std for each measurement
 clearfactor <- grep("mean()|std()",features$V2)
-cleardata <- binddata[,clearfactor]
-clearfeature <- features[clearfactor,2]
+binddata <- binddata[,clearfactor]
+features <- features[clearfactor,2]
 
 # Name the activities with descriptive activity names and label the variable names
 bindsub <- rbind(subtrain,subtest)
 bindact <- rbind(ytrain,ytest)
-binddata <- cbind(bindsub,bindact,cleardata)
+binddata <- cbind(bindsub,bindact,binddata)
 labelin <- factor(binddata[,2])
 levels(labelin) <- activelabel[,2]
 binddata[,2] <- labelin
-names (binddata) <- c("subject","activity",as.character(clearfeature))
+names (binddata) <- c("subject","activity",as.character(features))
 
-# Creat the second table with each variable, activity and subject
+# Creat the second table with the averge of each variable, activity and subject
 if (!"reshape2" %in% installed.packages()){
     install.packages("reshape2")
 }
